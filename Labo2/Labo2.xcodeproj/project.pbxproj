@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20D0B732CD52DB9005D06DB /* JeuPendu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D0B722CD52DB9005D06DB /* JeuPendu.swift */; };
 		C28857D82CD3CC6C0047B327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28857D72CD3CC6C0047B327 /* AppDelegate.swift */; };
 		C28857DA2CD3CC6C0047B327 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28857D92CD3CC6C0047B327 /* SceneDelegate.swift */; };
 		C28857DC2CD3CC6C0047B327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28857DB2CD3CC6C0047B327 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 		C28858082CD3CD2E0047B327 /* ListeDeFilms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28858072CD3CD2E0047B327 /* ListeDeFilms.swift */; };
 		C288580A2CD3CD610047B327 /* pendu in Resources */ = {isa = PBXBuildFile; fileRef = C28858092CD3CD610047B327 /* pendu */; };
 		C288580C2CD3CDF00047B327 /* MovieDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288580B2CD3CDF00047B327 /* MovieDownloader.swift */; };
+		C2FD82F82CD5560C00646DB3 /* imageSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FD82F72CD5560C00646DB3 /* imageSequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C20D0B722CD52DB9005D06DB /* JeuPendu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuPendu.swift; sourceTree = "<group>"; };
 		C28857D42CD3CC6C0047B327 /* Labo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28857D72CD3CC6C0047B327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C28857D92CD3CC6C0047B327 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		C28858072CD3CD2E0047B327 /* ListeDeFilms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListeDeFilms.swift; path = ../../../Downloads/documents/ListeDeFilms.swift; sourceTree = "<group>"; };
 		C28858092CD3CD610047B327 /* pendu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pendu; path = ../../../Downloads/documents/pendu; sourceTree = "<group>"; };
 		C288580B2CD3CDF00047B327 /* MovieDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDownloader.swift; sourceTree = "<group>"; };
+		C2FD82F72CD5560C00646DB3 /* imageSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageSequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				C28857E22CD3CC6C0047B327 /* LaunchScreen.storyboard */,
 				C28857E52CD3CC6C0047B327 /* Info.plist */,
 				C288580B2CD3CDF00047B327 /* MovieDownloader.swift */,
+				C20D0B722CD52DB9005D06DB /* JeuPendu.swift */,
+				C2FD82F72CD5560C00646DB3 /* imageSequence.swift */,
 			);
 			path = Labo2;
 			sourceTree = "<group>";
@@ -268,9 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2FD82F82CD5560C00646DB3 /* imageSequence.swift in Sources */,
 				C28857DC2CD3CC6C0047B327 /* ViewController.swift in Sources */,
 				C288580C2CD3CDF00047B327 /* MovieDownloader.swift in Sources */,
 				C28857D82CD3CC6C0047B327 /* AppDelegate.swift in Sources */,
+				C20D0B732CD52DB9005D06DB /* JeuPendu.swift in Sources */,
 				C28858082CD3CD2E0047B327 /* ListeDeFilms.swift in Sources */,
 				C28857DA2CD3CC6C0047B327 /* SceneDelegate.swift in Sources */,
 			);

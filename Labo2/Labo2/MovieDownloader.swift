@@ -7,11 +7,16 @@
 
 import Foundation
 let apiKey = "b2e66565"
-func fetchRandomID() {
+var randomMovieTitle: String? // Variable globale pour stocker le titre du film
+
+
+func fetchRandomID() -> String{
     if let randomID = listeFilms.randomElement() {
         print("ID de film aléatoire : \(randomID)")
+        return randomID
     } else {
         print("La liste de films est vide.")
+        return ""
     }
 }
 func fetchMovieTitle(withID movieID: String) {
@@ -40,6 +45,7 @@ func fetchMovieTitle(withID movieID: String) {
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                let title = json["Title"] as? String {
                 print("Titre du film : \(title)")
+                randomMovieTitle = title // Stocker le titre dans une variable globale
             } else {
                 print("Le format de réponse est inattendu.")
             }
@@ -53,11 +59,44 @@ func fetchMovieTitle(withID movieID: String) {
 }
 
 // Fonction pour récupérer un ID de film aléatoire et chercher son titre
-func fetchRandomMovieTitle() {
-    if let randomID = listeFilms.randomElement() {
-        fetchMovieTitle(withID: randomID)
-    } else {
-        print("La liste de films est vide.")
+func fetchRandomMovieTitle(completion: @escaping (String) -> Void) {
+    // Assume you have a random movie ID
+    let randomID = fetchRandomID()  // Replace this with your logic to fetch a random ID
+    
+    // Create the URL with the ID
+    guard let url = URL(string: "https://www.omdbapi.com/?i=\(randomID)&apikey=\(apiKey)") else {
+        print("Invalid URL")
+        return
     }
+    
+    // Perform the network request
+    let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        // Handle errors
+        if let error = error {
+            print("Error fetching movie title: \(error.localizedDescription)")
+            return
+        }
+        
+        guard let data = data else {
+            print("No data received")
+            return
+        }
+        
+        // Parse the JSON response
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+               let title = json["Title"] as? String {
+                print(title)
+                // Call the completion handler with the fetched title
+                completion(title)
+            } else {
+                print("Unexpected JSON format")
+            }
+        } catch {
+            print("JSON parsing error: \(error.localizedDescription)")
+        }
+    }
+    
+    task.resume()
 }
 
